@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    /** LoadingLayout相关 **/
+    <attr format="reference" name="styleLoadingLayout"/>
+    <declare-styleable name="LoadingLayout">
+        <attr format="reference" name="llEmptyResId"/>
+        <attr format="reference" name="llLoadingResId"/>
+        <attr format="reference" name="llErrorResId"/>
+        <attr format="reference" name="llEmptyImage"/>
+        <attr format="string" name="llEmptyText"/>
+        <attr format="reference" name="llErrorImage"/>
+        <attr format="string" name="llErrorText"/>
+        <attr format="string" name="llRetryText"/>
+        <attr format="color" name="llTextColor"/>
+        <attr format="dimension" name="llTextSize"/>
+        <attr format="color" name="llButtonTextColor"/>
+        <attr format="dimension" name="llButtonTextSize"/>
+        <attr format="reference" name="llButtonBackground"/>
+    </declare-styleable>
+    <item name="empty_image" type="id"/>
+    <item name="empty_text" type="id"/>
+    <item name="error_image" type="id"/>
+    <item name="error_text" type="id"/>
+    <item name="retry_button" type="id"/>
+    <style name="LoadingLayout">
+    </style>
+    <style name="LoadingLayout.Style">
+        <item name="llEmptyResId">@layout/_loading_layout_empty</item>
+        <item name="llLoadingResId">@layout/_loading_layout_loading</item>
+        <item name="llErrorResId">@layout/_loading_layout_error</item>
+
+        <item name="llTextColor">#999999</item>
+        <item name="llTextSize">16sp</item>
+
+        <item name="llButtonTextColor">#999999</item>
+        <item name="llButtonTextSize">16sp</item>
+        <item name="llButtonBackground">@drawable/_loading_layout_button</item>
+
+        <item name="llEmptyImage">@null</item>
+        <item name="llEmptyText">暂无数据</item>
+        <item name="llErrorImage">@null</item>
+        <item name="llErrorText">无网络连接，请检查您的网络...</item>
+        <item name="llRetryText">点击重试</item>
+    </style>
+
+    <!-- 通用PopupWindow入场动画-->
+    <style name="pop_translate_top_buttom">
+        <item name="android:windowEnterAnimation">@anim/pop_buttom_to_top_in</item>
+        <item name="android:windowExitAnimation">@anim/pop_top_to_buttom_out</item>
+    </style>
+
+    <!-- 通用Dialog样式 -->
+    <style name="NormalDialogStyle" parent="Dialog_style">
+        <item name="android:windowAnimationStyle">@style/normalDialogAnim</item>
+    </style>
+    <style name="normalDialogAnim" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/normal_dialog_enter</item>
+        <item name="android:windowExitAnimation">@anim/normal_dialog_exit</item>
+    </style>
+
+    <style name="TwoBtnDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item><!--边框 -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/dialog_backgroud</item>
+        <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上 -->
+        <item name="android:windowContentOverlay">@null</item>
+
+    </style>
+
+    <style name="Dialog_style" parent="@android:style/Theme.Holo.DialogWhenLarge">
+        <item name="android:windowFrame">@null</item><!--边框-->
+        <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">true</item><!--半透明-->
+        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <item name="android:windowBackground">@android:color/transparent</item><!--背景透明-->
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">true</item><!--模糊-->
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+
+    </style>
+    <style name="LoadingDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item><!--边框 -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">false</item><!--模糊-->
+    </style>
+
+</resources>

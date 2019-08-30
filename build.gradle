@@ -1,0 +1,58 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 27
+
+
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:design:27.1.1'
+
+    implementation 'com.google.zxing:core:3.3.0'
+    //implementation 'com.githang:status-bar-compat:0.7'
+    implementation 'com.github.bumptech.glide:glide:4.1.1'
+    //implementation 'com.jude:rollviewpager:1.4.6'
+    //implementation 'com.ogaclejapan.smarttablayout:library:1.6.1@aar'
+//    implementation 'me.iwf.photopicker:PhotoPicker:0.9.12@aar'
+    implementation 'com.zhihu.android:matisse:0.5.1' //PhotoPicker已停止维护，可用matisse代替
+    //implementation 'com.github.czy1121:loadinglayout:1.0.1'  //一个类完美封装加载中、加载为空、加载错误的父布局
+
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.5.1'
+    //implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.5.1'//没有使用特殊Header，可以不加这行
+    //implementation 'com.scwang.smartrefresh:SmartRefreshFooter:1.0.5.1'//没有使用特殊Footer，可以不加这行
+
+    //implementation 'com.android.support:multidex:1.0.1'
+
+
+    //implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    //implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    //implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+
+}
